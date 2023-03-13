@@ -44,7 +44,7 @@ public class Realm {
         //Варианты для команд
         switch (string) {
             case "1": {
-                System.out.println("На витрине лежат:" + Arrays.toString(Merchant.Goods.values()) + "\n" + "Но торговца пока нет.");
+                System.out.println("На витрине лежат:" + Arrays.toString(Merchant.Goods.values()) + "\n" + "Но торговца пока нет, а так хочется " + Merchant.Goods.randomItem());
                 command(br.readLine());
             }
             break;
