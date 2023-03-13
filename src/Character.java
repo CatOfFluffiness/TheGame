@@ -5,7 +5,7 @@ public abstract class Character {
     private int healthPoints;
     private int strength;
     private int dexterity;
-//Богаство и опыт
+//Богатство и опыт
     private int xp;
     private int gold;
 
@@ -17,16 +17,12 @@ public abstract class Character {
         this.xp = xp;
         this.gold = gold;
     }
-    //Реализация атаки - костыль, буду переделывать
     public int attack() {
-        if (dexterity * 3 > getRandomValue()) return strength;
+        Dice d = new Dice();
+        Dice d2 = new Dice();
+        if (d.roll() + dexterity > d2.roll() + 10) return strength;
         else return  0;
     }
-
-    private int getRandomValue() {
-        return (int) (Math.random() * 100);
-    }
-
     public String getName() {return name;}
 
     public void setName(String name) {this.name = name;}
