@@ -1,6 +1,7 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Arrays;
 
 public class Realm {
     //Класс для чтения введенных строк из консоли
@@ -36,14 +37,14 @@ public class Realm {
                     0,
                     0
             );
-            System.out.println(String.format("Спасти наш мир от драконов вызвался %s! Да будет его броня крепка и бицепс кругл!", player.getName()));
+            System.out.println(String.format("%s пошел на заработки! Да будет его броня крепка (брони нет) и бицепс кругл!", player.getName()));
             //Метод для вывода меню
             printNavigation();
         }
         //Варианты для команд
         switch (string) {
             case "1": {
-                System.out.println("Торговец еще не приехал");
+                System.out.println("На витрине лежат:" + Arrays.toString(Merchant.Goods.values()) + "\n" + "Но торговца пока нет.");
                 command(br.readLine());
             }
             break;
